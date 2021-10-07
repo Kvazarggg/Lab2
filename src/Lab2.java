@@ -19,13 +19,15 @@ public class Lab2 {
         double side = -1;
         for (int i = 0; i < circles.circle.length; i++) {
             circles.circle[i] = new Circle();
-            System.out.print("Введите радиус " + (i + 1) + " окружности: ");
-            side = Circle.CheckCorrectRadius("" + in.nextLine());
-            if (side == -1) {
-                System.out.println("Ошибка!");
-            } else {
-                circles.circle[i].setRadius(side);
-            }
+            do {
+                System.out.print("Введите радиус " + (i + 1) + " окружности: ");
+                side = Circle.CheckCorrectRadius("" + in.nextLine());
+                if (side == -1) {
+                    System.out.println("Ошибка!");
+                } else {
+                    circles.circle[i].setRadius(side);
+                }
+            } while (side == -1);
         }
 
         System.out.println("\nСодержимое массива окружностей:");
@@ -42,22 +44,30 @@ public class Lab2 {
 
         for (int i = 0; i < cylinders.cylinder.length; i++) {
             cylinders.cylinder[i] = new Cylinder();
-            System.out.print("Введите радиус " + (i + 1) + " цилиндра: ");
-            side = Cylinder.CheckCorrectRadius("" + in.nextLine());
-            if (side == -1) {
-                System.out.println("Ошибка!");
-            } else {
-                cylinders.cylinder[i].setRadius(side);
-            }
+            do {
+                System.out.print("Введите радиус " + (i + 1) + " цилиндра: ");
+                side = Cylinder.CheckCorrectRadius("" + in.nextLine());
 
-            System.out.print("Введите высоту " + (i + 1) + " цилиндра: ");
-            side = Cylinder.CheckCorrectHeight("" + in.nextLine());
-            if (side == -1) {
-                System.out.println("Ошибка!");
-            } else {
-                cylinders.cylinder[i].setHeight(side);
-            }
+                if (side == -1) {
+                    System.out.println("Ошибка!");
+                } else {
+                    cylinders.cylinder[i].setRadius(side);
+                }
+            } while (side == -1);
+
+            do {
+                System.out.print("Введите высоту " + (i + 1) + " цилиндра: ");
+                side = Cylinder.CheckCorrectHeight("" + in.nextLine());
+
+                if (side == -1) {
+                    System.out.println("Ошибка!");
+                } else {
+                    cylinders.cylinder[i].setHeight(side);
+                }
+            } while (side == -1);
+
         }
+
         System.out.println("\nСодержимое массива цилиндров:");
         for (int i = 0; i < cylinders.cylinder.length; i++) {
             System.out.println(cylinders.cylinder[i].toString());

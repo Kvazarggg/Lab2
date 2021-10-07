@@ -10,12 +10,7 @@ public class Cylinders {
         for (int i = 0; i < cylinder.length; i++) {
             volume += cylinder[i].getVolume();
         }
-        int lenght = cylinder.length;
-        for (int i = 0; i < cylinder.length; i++) {
-            if (cylinder[i].getVolume() < 1) {
-                lenght--;
-            }
-        }
-        return volume / lenght;
+
+        return volume / cylinder.length;
     }
 }
