@@ -18,7 +18,7 @@ public class Circle {
 
     public void setRadius(double radius) {
 
-        this.radius = radius > 0 ? radius : -1;
+        this.radius = radius;
     }
 
     @Override

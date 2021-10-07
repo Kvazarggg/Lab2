@@ -18,7 +18,7 @@ public class Cylinder extends Circle {
     }
 
     public void setHeight(double height) {
-        this.height = height > 0 ? height : -1;
+        this.height = height;
     }
 
     @Override
